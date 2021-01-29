@@ -11,21 +11,22 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_above="@+id/layout"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:fontFamily="@font/montserrat_medium"
         android:text="Retrofit Sample"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titleTextView"
+        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:orientation="vertical">
 
@@ -34,11 +35,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Post API"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/putApiButton"
@@ -46,11 +48,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Put API"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/getApiButton"
@@ -58,11 +61,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Get API"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/deleteApiButton"
@@ -70,23 +74,51 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Delete API"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <Button
-            android:id="@+id/multiPartApiButton"
+            android:id="@+id/multiPartApiType1Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:text="MultiPart API"
+            android:text="MultiPart API (Type 1)"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/multiPartApiType2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="MultiPart API (Type 2)"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/jsonParsingButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Json Parsing Example"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </RelativeLayout>

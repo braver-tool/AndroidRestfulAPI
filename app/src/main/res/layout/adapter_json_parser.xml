@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp"
+    tools:context=".parsing.JsonParserActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dailyHealthCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_light">
+
+            <LinearLayout
+                android:id="@+id/leaderDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <com.github.siyamed.shapeimageview.CircularImageView
+                    android:id="@+id/leaderProfileImageView"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:contentDescription="@string/desc"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:src="@drawable/default_profile" />
+
+                <TextView
+                    android:id="@+id/aboutLeaderTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/iowan_bold_italic"
+                    android:maxLines="5"
+                    android:paddingStart="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:text="Mother Mary Teresa Bojaxhiu, honoured in the Catholic Church as Saint Teresa of Calcutta, was an Albanian-Indian Roman Catholic nun and missionary. She was born in Skopje, then part of the Kosovo Vilayet of the Ottoman Empire."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/leaderNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leaderDetailLayout"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/iowan_bold_italic"
+                android:text="Bill Gates"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/knowMoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leaderDetailLayout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/iowan_bold_italic"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:text="@string/know_more"
+                android:textColor="@color/purple_400"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/leaderQuoteTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leaderNameTextView"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:fontFamily="@font/iowan_bold_italic"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/sample_quote"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

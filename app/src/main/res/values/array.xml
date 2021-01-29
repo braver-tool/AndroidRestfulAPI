@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="leaderProfileArray">
+        <item>@drawable/a1_sir_isaac_newton</item>
+        <item>@drawable/a2_einstein</item>
+        <item>@drawable/a3_thomas_edison</item>
+        <item>@drawable/a4_stephen_hawking</item>
+        <item>@drawable/a5_abraham_lincoln</item>
+        <item>@drawable/a6_sir_winston_churchill</item>
+        <item>@drawable/a7_alexandar</item>
+        <item>@drawable/a8_nelson_mandela</item>
+        <item>@drawable/a9_martin_luther_king</item>
+        <item>@drawable/a10_fidel_castro</item>
+        <item>@drawable/a11_mahatma_gandhi</item>
+        <item>@drawable/a12_mother_teresa</item>
+        <item>@drawable/a13_bill_gates</item>
+        <item>@drawable/a14_steve_jobs</item>
+        <item>@drawable/a15_apj_abdul_kalam</item>
+        <item>@drawable/default_profile</item>
+    </integer-array>
+</resources>

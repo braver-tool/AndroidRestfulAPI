@@ -1,0 +1,96 @@
+[
+
+	{
+		"name": "Isaac Newton",
+		"about": "Sir Isaac Newton PRS was an English mathematician, physicist, astronomer, theologian, and author who is widely recognised as one of the most influential scientists of all time and as a key figure in the scientific revolution.",
+		"link": "https://en.wikipedia.org/wiki/Isaac_Newton",
+		"profile_url": "",
+		"quote": "To every action there is always opposed an equal reaction"
+	}, {
+		"name": "Albert Einstein",
+		"about": "Albert Einstein was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics. His work is also known for its influence on the philosophy of science.",
+		"link": "https://en.wikipedia.org/wiki/Albert_Einstein",
+		"profile_url": "",
+		"quote": "Imagination is more important than knowledge"
+	},{
+		"name": "Thomas Edison",
+		"about": "Thomas Alva Edison was an American inventor and businessman who has been described as America's greatest inventor. He developed many devices in fields such as electric power generation, mass communication, sound recording, and motion pictures.",
+		"link": "https://en.wikipedia.org/wiki/Thomas_Edison",
+		"profile_url": "",
+		"quote": "Genius is one percent inspiration and ninety-nine percent perspiration"
+	}, {
+		"name": "Stephen Hawking",
+		"about": "Stephen William Hawking CH CBE FRS FRSA was an English theoretical physicist, cosmologist, and author who was director of research at the Centre for Theoretical Cosmology at the University of Cambridge at the time of his death.",
+		"link": "https://en.wikipedia.org/wiki/Stephen_Hawking",
+		"profile_url": "",
+		"quote": "Intelligence is the ability to adapt to change"
+	},{
+		"name": "Abraham Lincoln",
+		"about": "Abraham Lincoln was an American statesman and lawyer who served as the 16th president of the United States from 1861 to 1865. Lincoln led the nation through the American Civil War, the country's greatest moral, constitutional, and political crisis.",
+		"link": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+		"profile_url": "",
+		"quote": "I am a slow walker, but I never walk back"
+	}, {
+		"name": "Winston Churchill",
+		"about": "Sir Winston Leonard Spencer Churchill, KG, OM, CH, TD, DL, FRS, RA was a British statesman, army officer, and writer. He was Prime Minister of the United Kingdom from 1940 to 1945, when he led the country to victory in the Second World War, and again from 1951 to 1955.",
+		"link": "https://en.wikipedia.org/wiki/Winston_Churchill",
+		"profile_url": "",
+		"quote": "Success is not final, failure is not fatal: it is the courage to continue that counts"
+	},{
+		"name": "Alexander the Great",
+		"about": "Alexander III of Macedon, commonly known as Alexander the Great, was a king of the ancient Greek kingdom of Macedon and a member of the Argead dynasty. He was born in Pella in 356 BC and succeeded his father Philip II to the throne at the age of 20.",
+		"link": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+		"profile_url": "",
+		"quote": "I would rather live a short life of glory than a long one of obscurity"
+	}, {
+		"name": "Nelson Mandela",
+		"about": "Nelson Rolihlahla Mandela was a South African anti-apartheid revolutionary, political leader and philanthropist who served as President of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election.",
+		"link": "https://en.wikipedia.org/wiki/Nelson_Mandela",
+		"profile_url": "",
+		"quote": "Real leaders must be ready to sacrifice all for the freedom of their people"
+	},{
+		"name": "Martin Luther King, Jr.",
+		"about": "Martin Luther King Jr. was an American Christian minister and activist who became the most visible spokesperson and leader in the civil rights movement from 1955 until his assassination in 1968.",
+		"link": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+		"profile_url": "",
+		"quote": "We must accept finite disappointment, but never lose infinite hope"
+	}, {
+		"name": "Fidel Castro",
+		"about": "Fidel Alejandro Castro Ruz was a Cuban revolutionary and politician who served as Prime Minister of Cuba from 1959 to 1976 and President from 1976 to 2008. Ideologically a Marxist–Leninist and Cuban nationalist, he also served as the First Secretary of the Communist Party of Cuba from 1961 until 2011.",
+		"link": "https://en.wikipedia.org/wiki/Fidel_Castro",
+		"profile_url": "",
+		"quote": "A revolution is not a bed of roses. A revolution is a struggle between the future and the past"
+	},{
+		"name": "Mahatma Gandhi",
+		"about": "Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist, who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and in turn inspired movements for civil rights and freedom across the world.",
+		"link": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
+		"profile_url": "",
+		"quote": "Happiness is when what you think, what you say, and what you do are in harmony"
+	}, {
+		"name": "Mother Teresa",
+		"about": "Mother Mary Teresa Bojaxhiu, honoured in the Catholic Church as Saint Teresa of Calcutta, was an Albanian-Indian Roman Catholic nun and missionary. She was born in Skopje, then part of the Kosovo Vilayet of the Ottoman Empire.",
+		"link": "https://en.wikipedia.org/wiki/Mother_Teresa",
+		"profile_url": "",
+		"quote": "Yesterday is gone. Tomorrow has not yet come. We have only today. Let us begin"
+	},{
+		"name": "Bill Gates",
+		"about": "William Henry Gates III is an American business magnate, software developer, and philanthropist. He is best known as the co-founder of Microsoft Corporation.",
+		"link": "https://en.wikipedia.org/wiki/Bill_Gates",
+		"profile_url": "",
+		"quote": "Don’t compare yourself with anyone in this world…if you do so, you are insulting yourself"
+	}, {
+		"name": "Steve Jobs",
+		"about": "Steven Paul Jobs was an American business magnate, industrial designer, investor, and media proprietor.",
+		"link": "https://en.wikipedia.org/wiki/Steve_Jobs",
+		"profile_url": "",
+		"quote": "Your time is limited, so don’t waste it living someone else’s life"
+	}, {
+		"name": "A.P.J. Abdul Kalam",
+		"about": "Avul Pakir Jainulabdeen Abdul Kalam was an Indian aerospace scientist and politician who served as the 11th President of India from 2002 to 2007. He was born and raised in Rameswaram, Tamil Nadu and studied physics and aerospace engineering.",
+		"link": "https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam",
+		"profile_url": "",
+		"quote": "A dream is not that which you see while sleeping, it is something that does not let you sleep"
+	}
+
+
+]
