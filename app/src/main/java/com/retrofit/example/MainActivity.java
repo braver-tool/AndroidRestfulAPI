@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -58,30 +59,36 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit POST API
      */
     private void callRetrofitPostApi() {
-        PostApiDocumentsItem postApiDocumentsItem = new PostApiDocumentsItem("Notes", true, 12, RandomUUID, user_ID);
-        List<PostApiDocumentsItem> postApiDocumentsItemList = new ArrayList<>();
-        postApiDocumentsItemList.add(postApiDocumentsItem);
-        PostApiRequest postApiRequest = new PostApiRequest(postApiDocumentsItemList);
-        if (isNetworkAvailable()) {
-            Call<PostApiResponse> call = ApiBase.apiService().callRetrofitPostApi(postApiRequest, accessToken);
-            call.enqueue(new Callback<PostApiResponse>() {
-                @Override
-                public void onResponse(Call<PostApiResponse> call, Response<PostApiResponse> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        Log.d("##callRetrofitPostApi", "Post Api Success");
-                    } else {
-                        Log.d("##callRetrofitPostApi", "Post Api Failed--->" + response.code());
+        try {
+            PostApiDocumentsItem postApiDocumentsItem = new PostApiDocumentsItem("Notes", true, 12, RandomUUID, user_ID);
+            List<PostApiDocumentsItem> postApiDocumentsItemList = new ArrayList<>();
+            postApiDocumentsItemList.add(postApiDocumentsItem);
+            PostApiRequest postApiRequest = new PostApiRequest(postApiDocumentsItemList);
+            if (isNetworkAvailable()) {
+                Call<PostApiResponse> call = ApiBase.apiService().callRetrofitPostApi(postApiRequest, accessToken);
+                call.enqueue(new Callback<PostApiResponse>() {
+                    @Override
+                    public void onResponse(Call<PostApiResponse> call, Response<PostApiResponse> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            Log.d("##callRetrofitPostApi", "Post Api Success");
+                        } else {
+                            Log.d("##callRetrofitPostApi", "Post Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<PostApiResponse> call, Throwable t) {
-                    Log.d("##callRetrofitPostApi", "------->Error--->" + t.getMessage());
-                }
-            });
-        } else {
-            Log.d("##callRetrofitPostApi", "------->No Network");
+                    @Override
+                    public void onFailure(Call<PostApiResponse> call, Throwable t) {
+                        Log.d("##callRetrofitPostApi", "------->Error--->" + t.getMessage());
+                    }
+                });
+            } else {
+                Log.d("##callRetrofitPostApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callRetrofitPostApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
 
     }
 
@@ -89,27 +96,32 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit GET API
      */
     private void callRetrofitGetApi() {
-        if (isNetworkAvailable()) {
-            String userInfoUrl = APIUrlBase.BASE_URL_API + "api/v1/userInfo";
-            Call<GetUserInfoResponse> call = ApiBase.apiService().getUserInfo(userInfoUrl, accessToken);
-            call.enqueue(new Callback<GetUserInfoResponse>() {
-                @Override
-                public void onResponse(Call<GetUserInfoResponse> call, Response<GetUserInfoResponse> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        //GetUserInfoResponse getUserInfoResponse = response.body();
-                        Log.d("##callRetrofitGetApi", "Get Api Success");
-                    } else {
-                        Log.d("##callRetrofitGetApi", "Get Api Failed--->" + response.code());
+        try {
+            if (isNetworkAvailable()) {
+                String userInfoUrl = APIUrlBase.BASE_URL_API + "api/v1/userInfo";
+                Call<GetUserInfoResponse> call = ApiBase.apiService().getUserInfo(userInfoUrl, accessToken);
+                call.enqueue(new Callback<GetUserInfoResponse>() {
+                    @Override
+                    public void onResponse(Call<GetUserInfoResponse> call, Response<GetUserInfoResponse> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            //GetUserInfoResponse getUserInfoResponse = response.body();
+                            Log.d("##callRetrofitGetApi", "Get Api Success");
+                        } else {
+                            Log.d("##callRetrofitGetApi", "Get Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<GetUserInfoResponse> call, Throwable t) {
-                    Log.d("##callRetrofitGetApi", "------->Error--->" + t.getMessage());
-                }
-            });
-        } else {
-            Log.d("##callRetrofitGetApi", "------->No Network");
+                    @Override
+                    public void onFailure(Call<GetUserInfoResponse> call, Throwable t) {
+                        Log.d("##callRetrofitGetApi", "------->Error--->" + t.getMessage());
+                    }
+                });
+            } else {
+                Log.d("##callRetrofitGetApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callRetrofitGetApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -117,26 +129,31 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit PUT API
      */
     private void callRetrofitPutApi() {
-        PutApiRequest putApiRequest = new PutApiRequest(true, user_ID);
-        if (isNetworkAvailable()) {
-            Call<Object> call = ApiBase.apiService().callRetrofitPutApi(putApiRequest, accessToken);
-            call.enqueue(new Callback<Object>() {
-                @Override
-                public void onResponse(Call<Object> call, Response<Object> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        Log.d("##callRetrofitPutApi", "Put Api Success");
-                    } else {
-                        Log.d("##callRetrofitPutApi", "Put Api Failed--->" + response.code());
+        try {
+            PutApiRequest putApiRequest = new PutApiRequest(true, user_ID);
+            if (isNetworkAvailable()) {
+                Call<Object> call = ApiBase.apiService().callRetrofitPutApi(putApiRequest, accessToken);
+                call.enqueue(new Callback<Object>() {
+                    @Override
+                    public void onResponse(Call<Object> call, Response<Object> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            Log.d("##callRetrofitPutApi", "Put Api Success");
+                        } else {
+                            Log.d("##callRetrofitPutApi", "Put Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Object> call, Throwable t) {
-                    Log.d("##callRetrofitPutApi", "------->Error--->" + t.getMessage());
-                }
-            });
-        } else {
-            Log.d("##callRetrofitPutApi", "------->No Network");
+                    @Override
+                    public void onFailure(Call<Object> call, Throwable t) {
+                        Log.d("##callRetrofitPutApi", "------->Error--->" + t.getMessage());
+                    }
+                });
+            } else {
+                Log.d("##callRetrofitPutApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callRetrofitPutApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -144,26 +161,31 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit DELETE API
      */
     private void callRetrofitDeleteApi() {
-        if (isNetworkAvailable()) {
-            String url = APIUrlBase.BASE_URL_API + "api/v1/unregister?UserId=" + user_ID;
-            Call<Object> call = ApiBase.apiService().callDeleteApi(url);
-            call.enqueue(new Callback<Object>() {
-                @Override
-                public void onResponse(Call<Object> call, Response<Object> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        Log.d("##callRetrofitDeleteApi", "Delete Api Success");
-                    } else {
-                        Log.d("##callRetrofitDeleteApi", "Delete Api Failed--->" + response.code());
+        try {
+            if (isNetworkAvailable()) {
+                String url = APIUrlBase.BASE_URL_API + "api/v1/unregister?UserId=" + user_ID;
+                Call<Object> call = ApiBase.apiService().callDeleteApi(url);
+                call.enqueue(new Callback<Object>() {
+                    @Override
+                    public void onResponse(Call<Object> call, Response<Object> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            Log.d("##callRetrofitDeleteApi", "Delete Api Success");
+                        } else {
+                            Log.d("##callRetrofitDeleteApi", "Delete Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Object> call, Throwable t) {
-                    Log.d("##callRetrofitDeleteApi", "------->Error--->" + t.getMessage());
-                }
-            });
-        } else {
-            Log.d("##callRetrofitDeleteApi", "------->No Network");
+                    @Override
+                    public void onFailure(Call<Object> call, Throwable t) {
+                        Log.d("##callRetrofitDeleteApi", "------->Error--->" + t.getMessage());
+                    }
+                });
+            } else {
+                Log.d("##callRetrofitDeleteApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callRetrofitDeleteApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -171,30 +193,35 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit FILE UPLOAD API
      */
     private void callRetrofitMultiPartApi() {
-        if (isNetworkAvailable()) {
-            String imageUri = "<IMAGE_PATH>";
-            File cameraFile = new File(imageUri);
-            RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpg"), cameraFile);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("image", "image.jpg", requestFile);
-            Call<FileUploadResponse> call = ApiBase.apiService().callFileUploadApi(body, accessToken);
-            call.enqueue(new Callback<FileUploadResponse>() {
-                @Override
-                public void onResponse(Call<FileUploadResponse> call, Response<FileUploadResponse> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        Log.d("##callMultiPartApi", "File Post Api Success");
-                    } else {
-                        Log.d("##callMultiPartApi", "File Post Api Failed--->" + response.code());
+        try {
+            if (isNetworkAvailable()) {
+                String imageUri = "<IMAGE_PATH>";
+                File cameraFile = new File(imageUri);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpg"), cameraFile);
+                MultipartBody.Part body = MultipartBody.Part.createFormData("image", "image.jpg", requestFile);
+                Call<FileUploadResponse> call = ApiBase.apiService().callFileUploadApi(body, accessToken);
+                call.enqueue(new Callback<FileUploadResponse>() {
+                    @Override
+                    public void onResponse(Call<FileUploadResponse> call, Response<FileUploadResponse> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            Log.d("##callMultiPartApi", "File Post Api Success");
+                        } else {
+                            Log.d("##callMultiPartApi", "File Post Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<FileUploadResponse> call, Throwable t) {
-                    Log.d("##callMultiPartApi", "------->Error--->" + t.getMessage());
-                }
-            });
+                    @Override
+                    public void onFailure(Call<FileUploadResponse> call, Throwable t) {
+                        Log.d("##callMultiPartApi", "------->Error--->" + t.getMessage());
+                    }
+                });
 
-        } else {
-            Log.d("##callMultiPartApi", "------->No Network");
+            } else {
+                Log.d("##callMultiPartApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callMultiPartApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -202,33 +229,38 @@ public class MainActivity extends AppCompatActivity {
      * Method handle to Retrofit FILE UPLOAD API with json request
      */
     private void callRetrofitMultiPartApiType2() {
-        UserInfoPutDataItems userInfoPutDataItems = new UserInfoPutDataItems("ProfileUrl", "Male", "alex@mailinator.com", "", "Hales", "01-05-1989", "32651611618", "Alex");
-        if (isNetworkAvailable()) {
-            String imageUri = "<IMAGE_PATH>";
-            File cameraFile = new File(imageUri);
-            RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpg"), cameraFile);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("image", "image.jpg", requestFile);
-            String json = new Gson().toJson(userInfoPutDataItems);
-            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
-            Call<FileUploadResponse> call = ApiBase.apiService().callFileUploadApi(body, requestBody, accessToken);
-            call.enqueue(new Callback<FileUploadResponse>() {
-                @Override
-                public void onResponse(Call<FileUploadResponse> call, Response<FileUploadResponse> response) {
-                    if (response.code() == 200 && response.body() != null) {
-                        Log.d("##callMultiPartApi", "File Post Api Success");
-                    } else {
-                        Log.d("##callMultiPartApi", "File Post Api Failed--->" + response.code());
+        try {
+            UserInfoPutDataItems userInfoPutDataItems = new UserInfoPutDataItems("ProfileUrl", "Male", "alex@mailinator.com", "", "Hales", "01-05-1989", "32651611618", "Alex");
+            if (isNetworkAvailable()) {
+                String imageUri = "<IMAGE_PATH>";
+                File cameraFile = new File(imageUri);
+                RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpg"), cameraFile);
+                MultipartBody.Part body = MultipartBody.Part.createFormData("image", "image.jpg", requestFile);
+                String json = new Gson().toJson(userInfoPutDataItems);
+                RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), json);
+                Call<FileUploadResponse> call = ApiBase.apiService().callFileUploadApi(body, requestBody, accessToken);
+                call.enqueue(new Callback<FileUploadResponse>() {
+                    @Override
+                    public void onResponse(Call<FileUploadResponse> call, Response<FileUploadResponse> response) {
+                        if (response.code() == 200 && response.body() != null) {
+                            Log.d("##callMultiPartApi", "File Post Api Success");
+                        } else {
+                            Log.d("##callMultiPartApi", "File Post Api Failed--->" + response.code());
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<FileUploadResponse> call, Throwable t) {
-                    Log.d("##callMultiPartApi", "------->Error--->" + t.getMessage());
-                }
-            });
+                    @Override
+                    public void onFailure(Call<FileUploadResponse> call, Throwable t) {
+                        Log.d("##callMultiPartApi", "------->Error--->" + t.getMessage());
+                    }
+                });
 
-        } else {
-            Log.d("##callMultiPartApi", "------->No Network");
+            } else {
+                Log.d("##callMultiPartApi", "------->No Network");
+            }
+        } catch (Exception e) {
+            Log.d("##callMultiPartApi", "------->" + e.getMessage());
+            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
